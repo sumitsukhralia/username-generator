@@ -2,18 +2,11 @@
 const themeBtn = document.getElementById('themeToggle');
 const body = document.body;
 
-// Check saved theme
-if (localStorage.getItem('theme') === 'dark') {
-    enableDark();
-}
+if (localStorage.getItem('theme') === 'dark') enableDark();
 
-// Toggle Function
 window.toggleTheme = () => {
-    if (body.classList.contains('dark-mode')) {
-        disableDark();
-    } else {
-        enableDark();
-    }
+    if (body.classList.contains('dark-mode')) disableDark();
+    else enableDark();
 };
 
 function enableDark() {
@@ -31,50 +24,64 @@ function disableDark() {
 // 2. Generator Logic
 const generateBtn = document.getElementById('generateBtn');
 const resultsArea = document.getElementById('resultsArea');
+const trendingList = document.getElementById('trendingList');
 
 generateBtn.onclick = () => {
-    const cat = document.getElementById('category').value;
-    const base = document.getElementById('baseWord').value.trim();
-    const useNum = document.getElementById('useNumbers').checked;
-    const useSpec = document.getElementById('useSpecials').checked;
+    generateUsernames(true); // true = Main Area
+};
 
-    // Pull data from words.js (window.wordDatabase)
-    // If words.js is missing, fall back to empty arrays to prevent crash
-    const db = window.wordDatabase || { aesthetic: [], gamer: [], nouns: [] };
+// 3. Helper Functions
+function generateUsernames(isMainArea) {
+    const db = window.wordDatabase || { aesthetic: ["Error"], nouns: ["Error"] };
+    
+    // Get inputs (only for main area, otherwise random defaults)
+    let cat = 'aesthetic';
+    let base = '';
+    let useNum = false;
+    let useSpec = false;
+
+    if (isMainArea) {
+        cat = document.getElementById('category').value;
+        base = document.getElementById('baseWord').value.trim();
+        useNum = document.getElementById('useNumbers').checked;
+        useSpec = document.getElementById('useSpecials').checked;
+    } else {
+        // Randomize category for trending list
+        const cats = ['aesthetic', 'gamer', 'cute', 'premium'];
+        cat = cats[Math.floor(Math.random() * cats.length)];
+    }
 
     const styleWords = db[cat] || db.aesthetic; 
-    const nounWords = db.nouns;
+    const nounWords = db.nouns || ["User"];
     
     const results = [];
+    const count = isMainArea ? 24 : 12; // Generate 24 for main, 12 for trending
 
-    for (let i = 0; i < 24; i++) {
+    for (let i = 0; i < count; i++) {
         let name = "";
-        
-        // Pick random words
         const w1 = getRandom(styleWords);
         const w2 = getRandom(nounWords);
-        const w3 = getRandom(styleWords);
 
-        if (base) {
-            // If user typed a word, mix it in
+        if (base && isMainArea) {
             if (Math.random() > 0.5) name = w1 + base;
             else name = base + w2;
         } else {
-            // Random Combo
-            if (cat === 'premium') name = w1; // Premium is usually one short word
+            if (cat === 'premium') name = w1; 
             else name = w1 + w2;
         }
 
-        // Add suffixes
         if (useNum && Math.random() > 0.6) name += Math.floor(Math.random() * 99);
         if (useSpec && Math.random() > 0.8) name = `x${name}x`;
-        if (useSpec && Math.random() > 0.9) name = `_${name}_`;
 
         results.push(name);
     }
 
-    renderResults(results);
-};
+    if (isMainArea) {
+        renderResults(results);
+    } else {
+        renderTrending(results);
+    }
+}
 
 function getRandom(arr) {
     if (!arr || arr.length === 0) return "User";
@@ -94,7 +101,23 @@ function renderResults(names) {
     });
 }
 
+// 4. New Trending Render Function
+function renderTrending(names) {
+    trendingList.innerHTML = '';
+    names.forEach(name => {
+        const span = document.createElement('span');
+        span.className = 'trending-tag';
+        span.innerText = name;
+        trendingList.appendChild(span);
+    });
+}
+
 window.copyText = (text) => {
     navigator.clipboard.writeText(text);
     alert("Copied: " + text);
+};
+
+// 5. Initialize Trending on Load
+window.onload = () => {
+    generateUsernames(false); // False = fill the trending section
 };
