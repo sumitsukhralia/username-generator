@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aesthetic Username Generator | Gamer, Cute & Minimal Names</title>
+    <meta name="description" content="Generate aesthetic, gamer, cute, and edgy usernames instantly. No login required. Copy, save as PNG, and customize your online identity.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.vercel.app/">
+    <meta property="og:title" content="Aesthetic Username Generator">
+    <meta property="og:description" content="Instant username ideas for Instagram, Roblox, TikTok, and Discord.">
+    
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Username Generator",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <div id="consentModal" class="modal">
+        <div class="modal-content">
+            <p>We use local storage to save your preferences and minimal analytics to improve the app.</p>
+            <div class="modal-actions">
+                <button id="acceptBtn" class="btn-primary">Accept & Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="ad-banner-top">
+            <div class="ad-placeholder">Ad Space (Top)</div>
+        </div>
+
+        <header>
+            <h1>Username Generator</h1>
+            <p>Aesthetic • Gamer • Cute • Minimal</p>
+        </header>
+
+        <main>
+            <div class="control-panel">
+                <div class="input-group">
+                    <label for="baseWord">Base Word (Optional)</label>
+                    <input type="text" id="baseWord" placeholder="e.g. Moon, Ninja">
+                </div>
+
+                <div class="input-group">
+                    <label for="category">Style Category</label>
+                    <select id="category">
+                        <option value="aesthetic">Aesthetic / Soft</option>
+                        <option value="gamer">Gamer / Cool</option>
+                        <option value="cute">Cute / Kawaii</option>
+                        <option value="edgy">Edgy / Minimal</option>
+                    </select>
+                </div>
+
+                <div class="options-row">
+                    <label class="toggle">
+                        <input type="checkbox" id="useNumbers">
+                        <span class="slider"></span>
+                        Add Numbers
+                    </label>
+                    <label class="toggle">
+                        <input type="checkbox" id="useSpecials">
+                        <span class="slider"></span>
+                        Special Chars
+                    </label>
+                </div>
+
+                <div class="input-group">
+                    <label>Length: <span id="lenValue">Medium</span></label>
+                    <input type="range" id="lengthRange" min="1" max="3" value="2">
+                </div>
+
+                <button id="generateBtn" class="btn-primary">Generate Usernames</button>
+                <div id="cooldownMsg" class="hidden">Please wait 3s...</div>
+            </div>
+
+            <div class="ad-sidebar">
+                </div>
+
+            <div id="resultsArea" class="results-grid">
+                <div class="empty-state">Tap Generate to start...</div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="socials">
+                <button onclick="window.open('https://instagram.com')">Instagram</button>
+                <button onclick="window.open('mailto:contact@example.com')">Contact</button>
+                <button onclick="window.open('https://github.com')">GitHub</button>
+            </div>
+            <p>&copy; 2025 Username Gen. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
