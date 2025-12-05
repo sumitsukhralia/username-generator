@@ -1,7 +1,7 @@
-/* PASTE YOUR 1000 WORDS HERE 
-   Format: "Word", "Word", "Word" inside the brackets [ ... ]
-*/window.wordDatabase = {
-    // --- AESTHETIC / SOFT (Nature, Celestial, dreamy) ---
+/* COMPLETE WORD DATABASE (1000+ Words) */
+
+window.wordDatabase = {
+    // --- AESTHETIC / SOFT ---
     aesthetic: [
         "Velvet", "Lunar", "Honey", "Silk", "Ethereal", "Bloom", "Mist", "Cloud", "Vanilla", "Rose",
         "Divine", "Hollow", "Pure", "Fairy", "Angel", "Ghost", "Pearl", "Crystal", "Golden", "Quiet",
@@ -38,7 +38,7 @@
         "Pet", "Animal", "Beast", "Creature", "Monster", "Alien", "Robot", "Cyborg", "Android", "Human"
     ],
 
-    // --- GAMER / COOL (Aggressive, Tech, Dark) ---
+    // --- GAMER / COOL ---
     gamer: [
         "Toxic", "Rapid", "Shadow", "Elite", "Pro", "Hyper", "Cyber", "Neon", "Rogue", "Savage",
         "Viper", "Ghost", "Sniper", "Dark", "Venom", "Iron", "Steel", "Alpha", "Omega", "Chaos",
@@ -72,7 +72,7 @@
         "Link", "Lion", "Liquid", "List", "Lit", "Live", "Load", "Lobster", "Lock", "Loco"
     ],
 
-    // --- CUTE / KAWAII (Animals, Sweet, Food) ---
+    // --- CUTE / KAWAII ---
     cute: [
         "Smol", "Tiny", "Puff", "Mochi", "Boba", "Peach", "Bunny", "Kitty", "Puppy", "Sugar",
         "Candy", "Cookie", "Berry", "Daisy", "Fluffy", "Jelly", "Minty", "Star", "Heart", "Love",
@@ -101,7 +101,7 @@
         "Smile", "Snail", "Snake", "Snow", "Soda", "Soft", "Song", "Soul", "Spark", "Sparkle"
     ],
 
-    // --- PREMIUM / SHORT (SaaS, Modern, Abstract, 3-4 letters) ---
+    // --- PREMIUM / SHORT ---
     premium: [
         "Lux", "Vantage", "Prisma", "Apex", "Zenith", "Flux", "Core", "Arc", "Bolt", "Echo",
         "Vista", "Prime", "Solo", "Mono", "Duo", "Trio", "Quark", "Atom", "Ion", "Cell",
@@ -135,7 +135,7 @@
         "Opt", "Orb", "Ore", "Our", "Out", "Owe", "Owl", "Own", "Pad", "Pal"
     ],
     
-    // --- NOUNS (Mix with adjectives to make names like "NeonWalker") ---
+    // --- NOUNS ---
     nouns: [
         "Soul", "Mind", "Vibe", "Wraith", "Phantom", "Spirit", "Legend", "Master", "King", "Lord",
         "Walker", "Runner", "Hunter", "Slayer", "Seeker", "Keeper", "Watcher", "Gazer", "Dreamer",
@@ -171,36 +171,5 @@
         "Hurt", "Ice", "Idea", "Image", "Impact", "Income", "Index", "Iron", "Issue", "Item",
         "Job", "Join", "Joke", "Judge", "Juice", "Jump", "Junk", "Keep", "Key", "Kick",
         "Kid", "Kill", "Kind", "King", "Kiss", "Knee", "Knife", "Knot", "Know", "Lab"
-    ]
-};
-
-window.wordDatabase = {
-    aesthetic: [
-        "Velvet", "Lunar", "Honey", "Silk", "Ethereal", "Bloom", "Mist", "Cloud", "Vanilla", "Rose",
-        "Divine", "Hollow", "Pure", "Fairy", "Angel", "Ghost", "Pearl", "Crystal", "Golden", "Quiet",
-        "Secret", "Lost", "Dreamy", "Lush", "Nova", "Stellar", "Cosmic", "Petal", "Aura", "Glow"
-        // Add more here...
-    ],
-    gamer: [
-        "Toxic", "Rapid", "Shadow", "Elite", "Pro", "Hyper", "Cyber", "Neon", "Rogue", "Savage",
-        "Viper", "Ghost", "Sniper", "Dark", "Venom", "Iron", "Steel", "Alpha", "Omega", "Chaos",
-        "Storm", "Void", "Pixel", "Glitch", "Turbo", "Sonic", "Fatal", "Reaper", "Strike", "Nitro"
-        // Add more here...
-    ],
-    cute: [
-        "Smol", "Tiny", "Puff", "Mochi", "Boba", "Peach", "Bunny", "Kitty", "Puppy", "Sugar",
-        "Candy", "Cookie", "Berry", "Daisy", "Fluffy", "Jelly", "Minty", "Star", "Heart", "Love",
-        "Baby", "Cinnamon", "Cherry", "Lemon", "Melon", "Cocoa", "Milk", "Tea", "Sunny", "Happy"
-    ],
-    premium: [
-        "Lux", "Vantage", "Prisma", "Apex", "Zenith", "Flux", "Core", "Arc", "Bolt", "Echo",
-        "Vista", "Prime", "Solo", "Mono", "Duo", "Trio", "Quark", "Atom", "Ion", "Cell"
-    ],
-    
-    // Nouns to mix with adjectives
-    nouns: [
-        "Soul", "Mind", "Vibe", "Wraith", "Phantom", "Spirit", "Legend", "Master", "King", "Lord",
-        "Walker", "Runner", "Hunter", "Slayer", "Seeker", "Keeper", "Watcher", "Gazer", "Dreamer",
-        "Pilot", "Rider", "Driver", "Gamer", "Player", "User", "Bot", "System", "Data", "Base", "File"
     ]
 };
